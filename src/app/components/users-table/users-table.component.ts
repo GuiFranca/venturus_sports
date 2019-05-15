@@ -13,10 +13,12 @@ export class UsersTableComponent implements OnInit {
   public aCol: Array<ITable>;
   public aUser: Array<User>;
 
+  public bLoading: boolean;
+
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-
+    this.bLoading = true;
     this.usersService.getUsers().subscribe(oRet => {
       this.aUser = oRet.map(oElem => {
         const oUser: User = new User();
@@ -29,6 +31,7 @@ export class UsersTableComponent implements OnInit {
 
         return oUser;
       });
+      this.bLoading = false;
     });
 
     this.aCol = [
