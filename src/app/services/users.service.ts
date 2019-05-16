@@ -17,4 +17,8 @@ export class UsersService {
   public getUsers(): Observable<any> {
     return this.http.get(`${this.sApiUrl}/users`);
   }
+
+  public getPhotos(): Observable<any> {
+    return this.http.get(`${this.sApiUrl}/photos`);
+  }
 }

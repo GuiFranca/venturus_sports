@@ -4,6 +4,9 @@ export class User {
   email: string;
   city: string;
   often_ride: string;
+  nuPosts: number;
+  nuAlbuns: number;
+  nuPhotos: number;
 }
 
 
